@@ -1,0 +1,6 @@
+flask
+pandas
+matplotlib
+pytesseract
+opencv-python
+pillow

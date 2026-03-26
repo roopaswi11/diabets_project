@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Diabetes AI Analyzer</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="header">
+<h1>🩺 Diabetes AI Report Analyzer</h1>
+<p>Upload your blood sugar report to analyze diabetes risk</p>
+</div>
+
+<div class="container">
+
+<form action="/upload" method="POST" enctype="multipart/form-data">
+
+<label>Select Lab Report</label>
+
+<input type="file" name="report" accept=".png,.jpg,.jpeg,.pdf,.docx" required>
+
+<button type="submit">Analyze Report</button>
+
+</form>
+
+<div class="links">
+
+<a href="/dashboard">📊 View Sugar Dashboard</a>
+
+<a href="/chatbot">🤖 Diabetes Chatbot</a>
+
+</div>
+
+</div>
+
+</body>
+</html>

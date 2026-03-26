@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Diabetes Report Result</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="header">
+<h1>Report Analysis Result</h1>
+</div>
+
+<div class="result-container">
+
+<div class="card">
+<h3>Fasting Sugar</h3>
+<p>{{ fasting if fasting else "Not Found" }}</p>
+</div>
+
+<div class="card">
+<h3>PP Sugar</h3>
+<p>{{ pp if pp else "Not Found" }}</p>
+</div>
+
+<div class="card">
+<h3>HbA1c</h3>
+<p>{{ hba1c if hba1c else "Not Found" }}</p>
+</div>
+
+</div>
+
+<div class="status-box">
+
+<h2>Diabetes Status</h2>
+
+{% if status == "Normal" %}
+<p class="normal">🟢 Normal</p>
+
+{% elif status == "Prediabetes" %}
+<p class="pre">🟡 Prediabetes</p>
+
+{% else %}
+<p class="danger">🔴 Diabetes</p>
+{% endif %}
+
+</div>
+
+<div class="card large">
+
+<h3>Doctor Alert</h3>
+<p>{{ alert }}</p>
+
+</div>
+
+<div class="card large">
+
+<h3>Diet Recommendation</h3>
+<p>{{ diet }}</p>
+
+</div>
+
+<div class="card large">
+
+<h3>Extracted Report Text</h3>
+<pre>{{ raw_text }}</pre>
+
+</div>
+
+<div class="home-btn">
+<a href="/">⬅ Upload Another Report</a>
+</div>
+<div class="gauge-container">
+
+<h2>Diabetes Risk Meter</h2>
+
+<div class="gauge">
+
+<div class="gauge-body">
+
+<div class="gauge-fill {{ status }}"></div>
+
+<div class="gauge-cover">
+{{ status }}
+</div>
+
+</div>
+
+<div class="gauge-labels">
+
+<span>Normal</span>
+<span>Prediabetes</span>
+<span>Diabetes</span>
+
+</div>
+
+</div>
+
+</div>
+<div class="card large">
+
+<h3>Daily Meal Plan</h3>
+
+<ul>
+
+<li><b>Breakfast:</b> {{ meal.breakfast }}</li>
+
+<li><b>Lunch:</b> {{ meal.lunch }}</li>
+
+<li><b>Dinner:</b> {{ meal.dinner }}</li>
+
+<li><b>Snacks:</b> {{ meal.snacks }}</li>
+
+</ul>
+
+</div>
+
+</body>
+</html>
